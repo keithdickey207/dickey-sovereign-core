@@ -5,6 +5,10 @@
 
 Air-gapped command module integrating spatial intelligence, cyber threat analysis, fusion physics, grid-to-chip power modeling, quantum-classical tactile edge inference, and operational logistics — all routed through a local Ollama orchestration layer.
 
+**Anchor:** Waterville, ME **04901** (`44.5520°N, 69.6317°W`)
+
+Feeds live physics and tactile streams into [District 04901 Grid](https://github.com/keithdickey207/District_04901_Grid) (React spatial C2) and complements [Aether Core](https://github.com/keithdickey207/aether) (USD-4 brain hub + Godot bridge).
+
 ## Doctrine
 
 - **Local-first:** No cloud APIs for telemetry, inference, or pipeline routing
@@ -59,15 +63,31 @@ python3 dickey_sovereign_core.py --tactile-audit
 
 ### Live VM Telemetry (with [District 04901 Grid](https://github.com/keithdickey207/District_04901_Grid))
 
-```bash
-# Terminal 1 — 04901 grid
-cd ~/projects/district_04901_grid && npm run start:grid
+```
+dickey-sovereign-core  ──UDP :2368──►  telemetry_bridge.py / ws-proxy.js
+                                              │
+                                              ▼
+                                    SovereignVMEngine.jsx (React VM)
+```
 
-# Terminal 2 — pick a stream
+```bash
+# Terminal 1 — 04901 grid (Node or Python bridge)
+cd ~/projects/district_04901_grid
+npm run start:grid              # Node proxy + Vite
+# bash start-grid-py.sh         # Python bridge + Vite (GNSS mesh)
+
+# Terminal 2 — sovereign streams (from this repo)
+cd ~/dickey-sovereign-core/core
 python3 dickey_sovereign_core.py --fusion-stream --fusion-Q 15
 python3 dickey_sovereign_core.py --tactile-stream
 python3 dickey_sovereign_core.py --vm-emit --vm-mode fusion
+
+# Terminal 3 (optional) — Pixel rover on mesh
+cd ~/projects/district_04901_grid
+python3 tools/pixel_rover.py --target 127.0.0.1 --device pixel_1
 ```
+
+Open **http://127.0.0.1:5173** → **CONNECT WS** → `ws://127.0.0.1:8080`
 
 ### CTI Pipeline
 
@@ -110,6 +130,18 @@ python3 core/build_tactile_onnx.py
 pip install pytest
 pytest tests/ -v
 ```
+
+## Sovereign Stack
+
+| Project | Role |
+|---------|------|
+| **[Aether Core](https://github.com/keithdickey207/aether)** | Brain hub — USD-4 protocol, RF lab, medical, Godot 4 bridge |
+| **[District 04901 Grid](https://github.com/keithdickey207/District_04901_Grid)** | Spatial C2 — React VM canvas, UDP/WS telemetry mesh |
+| **dickey-sovereign-core** (this repo) | Physics + CTI + tactile streams → UDP ingest |
+| **[waterville-ar](https://github.com/keithdickey207/waterville-ar)** | Godot city builder |
+| **[04901-digital-twin](https://github.com/keithdickey207/04901-digital-twin)** | Godot digital twin |
+
+Sync: Tailscale + Syncthing + git worktrees — `~/SOVEREIGN_SYNC_QUICKSTART.md`
 
 ## Repository Layout
 
