@@ -1,0 +1,10 @@
+ollama
+numpy
+pytest>=7.0
+laspy
+scapy
+websockets
+aiohttp
+tldextract
+maxminddb
+networkx
