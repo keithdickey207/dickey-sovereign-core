@@ -1,0 +1,28 @@
+name: Sovereign Core CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+      - name: Run tests
+        run: pytest tests/ -v
+      - name: Fusion audit smoke
+        run: python core/fusion_physics.py --json | head -c 200
+      - name: Power audit smoke
+        run: python core/power_electronics.py --json | head -c 200
+      - name: QCTB audit smoke
+        run: python core/tactile_qctb.py --json | head -c 200
