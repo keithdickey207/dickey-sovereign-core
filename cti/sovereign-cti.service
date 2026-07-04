@@ -1,0 +1,20 @@
+[Unit]
+Description=Sovereign CTI Passive CertStream Monitoring Pipeline
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=keithdickey207
+WorkingDirectory=/home/keithdickey207/dickey-sovereign-core/cti
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 pipeline.py
+Restart=always
+RestartSec=5
+MemoryHigh=1500M
+MemoryMax=2500M
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

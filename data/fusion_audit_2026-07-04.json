@@ -1,0 +1,265 @@
+{
+  "config": {
+    "volume_m3": 0.1,
+    "fuel_mix_d_fraction": 0.5,
+    "n_i_m3": 6e+22,
+    "T_i_keV": 80.0,
+    "T_e_keV": 20.0,
+    "B_tesla": 42.0,
+    "tau_burn_us": 15.0,
+    "rep_rate_hz": 10.0,
+    "sigma_v_m3_s": null,
+    "ln_lambda": 15.0,
+    "Z_eff": 1.5,
+    "eta_inductive": 0.85,
+    "eta_dec": 0.7,
+    "eta_alpha_th": 0.4,
+    "f_thermal_loss": 0.2,
+    "r_major_m": 0.05,
+    "I_peak_ka": 857.0,
+    "yield_strength_mpa": 600.0
+  },
+  "inductive_recovery": {
+    "U_mag_kJ": 368.0,
+    "inductive_recovery_kJ": 250.24,
+    "EMF_volts": 6597344.572538566,
+    "spitzer_resistivity_ohm_m": 5.833630944789018e-16,
+    "flux_diffusion_time_s": 21541250.609252688,
+    "flux_diffusion_time_us": 21541250609252.688,
+    "expansion_time_us": 0.05,
+    "flux_conserved": true
+  },
+  "compression_trajectory": [
+    {
+      "n_e_m3": 4e+21,
+      "B_T": 4.4,
+      "U_mag_kJ": 4.0,
+      "tau_eq_ms": 0.4365,
+      "decoupling_margin": 29.1,
+      "Q": 1.01,
+      "burn_viable": true
+    },
+    {
+      "n_e_m3": 1e+22,
+      "B_T": 9.4,
+      "U_mag_kJ": 18.6,
+      "tau_eq_ms": 0.1746,
+      "decoupling_margin": 11.6,
+      "Q": 1.37,
+      "burn_viable": true
+    },
+    {
+      "n_e_m3": 2e+22,
+      "B_T": 16.8,
+      "U_mag_kJ": 59.0,
+      "tau_eq_ms": 0.0873,
+      "decoupling_margin": 5.8,
+      "Q": 1.72,
+      "burn_viable": false
+    },
+    {
+      "n_e_m3": 4e+22,
+      "B_T": 30.0,
+      "U_mag_kJ": 187.2,
+      "tau_eq_ms": 0.0436,
+      "decoupling_margin": 2.9,
+      "Q": 2.17,
+      "burn_viable": false
+    },
+    {
+      "n_e_m3": 6e+22,
+      "B_T": 42.0,
+      "U_mag_kJ": 368.0,
+      "tau_eq_ms": 0.0291,
+      "decoupling_margin": 1.9,
+      "Q": 2.49,
+      "burn_viable": false
+    },
+    {
+      "n_e_m3": 8e+22,
+      "B_T": 53.4,
+      "U_mag_kJ": 594.4,
+      "tau_eq_ms": 0.0218,
+      "decoupling_margin": 1.5,
+      "Q": 2.74,
+      "burn_viable": false
+    }
+  ],
+  "optimal_burn_density_m3": 4e+21,
+  "reactivity_comparison": {
+    "audited_sigma_v_4.5e-22": {
+      "sigma_v": 4.5e-22,
+      "P_fus_MW": 211102.79329584003,
+      "Q": 8.604733422384783,
+      "net_MW_at_10Hz": 4.747986193783639,
+      "note": "Audit \u03c3v \u2014 verify against Bosch-Hale"
+    },
+    "bosch_hale_corrected": {
+      "sigma_v": 1.2999999999999988e-22,
+      "P_fus_MW": 60985.25139657594,
+      "Q": 2.4858118775778237,
+      "net_MW_at_10Hz": 0.5342360115374944
+    }
+  },
+  "two_temperature_window": {
+    "tau_burn_us": 15.0,
+    "tau_eq_at_peak_ms": 0.02909904449327356,
+    "tau_eq_at_intermediate_ms": 0.4364856673991033,
+    "decoupling_at_peak": 1.9399362995515708,
+    "decoupling_at_mid": 29.09904449327356
+  },
+  "adiabatic_2x_density_compression": {
+    "density_ratio": 2.0,
+    "B_isothermal_T": 59.396969619669996,
+    "B_adiabatic_T": 74.8354923237885,
+    "U_mag_isothermal_kJ": 736.0,
+    "U_mag_adiabatic_kJ": 1168.3271742485947,
+    "P_fus_multiplier": 4.0,
+    "Q_improvement_isothermal": 2.0,
+    "Q_improvement_adiabatic": 1.259921049894873
+  },
+  "power_loop_Q5": {
+    "sigma_v_m3_s": 1.2999999999999988e-22,
+    "P_fus_MW": 122666.66666666667,
+    "P_brem_MW": 2.4530646584891684e-05,
+    "P_alpha_heating_MW": 11997.098635391989,
+    "P_net_thermal_margin_MW": 11997.098610861342,
+    "tau_eq_ms": 0.02909904449327356,
+    "decoupling_margin_orders": 0.28778746951401596,
+    "U_mag_kJ": 368.0,
+    "Q_fusion": 5.0,
+    "per_pulse_kJ": {
+      "magnetic_investment": 368.0,
+      "gross_fusion": 1840.0,
+      "inductive_recovery": 250.24,
+      "proton_DEC": 199.5344262295082,
+      "alpha_thermal": 144.78688524590166,
+      "net_electrical": 226.5613114754099
+    },
+    "continuous_MW": {
+      "magnetic_investment": 3.68,
+      "gross_fusion": 18.4,
+      "inductive_recovery": 2.5024,
+      "proton_DEC": 1.9953442622950817,
+      "alpha_thermal": 1.4478688524590164,
+      "net_electrical": 2.2656131147540988
+    },
+    "recirculating_fraction": 0.2,
+    "hoop_stress_MPa": 701.8732990352584
+  },
+  "power_loop_Q15": {
+    "sigma_v_m3_s": 1.2999999999999988e-22,
+    "P_fus_MW": 368000.00000000006,
+    "P_brem_MW": 2.4530646584891684e-05,
+    "P_alpha_heating_MW": 11997.098635391989,
+    "P_net_thermal_margin_MW": 11997.098610861342,
+    "tau_eq_ms": 0.02909904449327356,
+    "decoupling_margin_orders": 0.28778746951401596,
+    "U_mag_kJ": 368.0,
+    "Q_fusion": 15.0,
+    "per_pulse_kJ": {
+      "magnetic_investment": 368.0,
+      "gross_fusion": 5520.0,
+      "inductive_recovery": 250.24,
+      "proton_DEC": 598.6032786885245,
+      "alpha_thermal": 434.36065573770486,
+      "net_electrical": 915.2039344262295
+    },
+    "continuous_MW": {
+      "magnetic_investment": 3.68,
+      "gross_fusion": 55.2,
+      "inductive_recovery": 2.5024,
+      "proton_DEC": 5.986032786885245,
+      "alpha_thermal": 4.343606557377049,
+      "net_electrical": 9.152039344262294
+    },
+    "recirculating_fraction": 0.06666666666666667,
+    "hoop_stress_MPa": 701.8732990352584
+  },
+  "volume_scan_for_5MW_net": [
+    {
+      "volume_m3": 0.05,
+      "net_MW": 4.58,
+      "meets_target": false,
+      "recirculating_fraction": 0.07
+    },
+    {
+      "volume_m3": 0.1,
+      "net_MW": 9.15,
+      "meets_target": true,
+      "recirculating_fraction": 0.07
+    },
+    {
+      "volume_m3": 0.2,
+      "net_MW": 18.3,
+      "meets_target": true,
+      "recirculating_fraction": 0.07
+    },
+    {
+      "volume_m3": 0.3,
+      "net_MW": 27.46,
+      "meets_target": true,
+      "recirculating_fraction": 0.07
+    },
+    {
+      "volume_m3": 0.5,
+      "net_MW": 45.76,
+      "meets_target": true,
+      "recirculating_fraction": 0.07
+    },
+    {
+      "volume_m3": 0.75,
+      "net_MW": 68.64,
+      "meets_target": true,
+      "recirculating_fraction": 0.07
+    },
+    {
+      "volume_m3": 1.0,
+      "net_MW": 91.52,
+      "meets_target": true,
+      "recirculating_fraction": 0.07
+    }
+  ],
+  "facility_50MW_comparison": {
+    "target_compute_MW": 50.0,
+    "torsatron_solution": {
+      "volume_m3": 0.5,
+      "Q": 20,
+      "net_MW": 62.97626229508196,
+      "recirc_frac": 0.05
+    },
+    "microreactor_unit_counts": {
+      "Aalo Pod (5\u00d710 MWe)": {
+        "units": 5,
+        "unit_MW": 10,
+        "fuel": "LEU",
+        "coolant": "Na"
+      },
+      "Valar Ward 250 (5 MWe)": {
+        "units": 10,
+        "unit_MW": 5,
+        "fuel": "HALEU/TRISO",
+        "coolant": "He"
+      },
+      "Radiant Kaleidos (1 MWe)": {
+        "units": 50,
+        "unit_MW": 1,
+        "fuel": "HALEU/TRISO",
+        "coolant": "He/air"
+      },
+      "Antares R1 (~1 MWe)": {
+        "units": 50,
+        "unit_MW": 1,
+        "fuel": "HALEU/TRISO",
+        "coolant": "Na heat pipes"
+      }
+    }
+  },
+  "structural": {
+    "hoop_stress_MPa": 701.8732990352584,
+    "yield_threshold_MPa": 600.0,
+    "exceeds_REBCO_limit": true,
+    "fatigue_lifetime_days_unjacketed": 11.5
+  },
+  "04901_veto": "Bosch-Hale \u03c3v=1.30e-22 m\u00b3/s @ 80 keV. Q=5 \u2192 2.27 MW net (20% recirc). Q=15 \u2192 9.15 MW net (7% recirc). 04901 5 MW target: achievable at Q\u226515 on V=0.1 m\u00b3 baseline, or Q=5 requires V\u22650.5 m\u00b3 + helical shear burn extension."
+}

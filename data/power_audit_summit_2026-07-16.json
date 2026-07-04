@@ -1,0 +1,134 @@
+{
+  "config": {
+    "utility_ac_v": 415.0,
+    "dc_bus_v": 800.0,
+    "rack_bus_v": 48.0,
+    "legacy_bus_v": 12.0,
+    "rack_power_kw": 100.0,
+    "node_count": 8,
+    "node_tdp_w": 500.0,
+    "distribution_resistance_mohm": 5.0,
+    "sic_rectifier_eff": 0.985,
+    "gan_rack_converter_eff": 0.975,
+    "vpd_pol_eff": 0.92,
+    "bbu_on_dc_bus": true,
+    "gan_f_sw_hz": 1000000.0,
+    "gan_v_ds": 48.0,
+    "gan_i_d": 20.0,
+    "gan_t_sw_ns": 10.0,
+    "si_t_sw_ns": 100.0,
+    "gan_q_g_nc": 8.0,
+    "gan_v_gs": 5.0
+  },
+  "institutional_chain": {
+    "stages": {
+      "utility_transformer": 0.98,
+      "ups_double_conversion": 0.93,
+      "pdu_distribution": 0.99,
+      "server_psu_ac_dc": 0.92,
+      "board_12v_distribution": 0.97,
+      "vrm_horizontal": 0.9
+    },
+    "end_to_end_efficiency": 0.7247,
+    "loss_fraction_pct": 27.5,
+    "delivered_to_silicon_fraction": 0.7246800237600001
+  },
+  "sovereign_chain": {
+    "stages": {
+      "sic_single_rectification": 0.985,
+      "dc_bus_bbu_overhead": 0.999,
+      "gan_rack_48v_converter": 0.975,
+      "vpd_point_of_load": 0.92
+    },
+    "end_to_end_efficiency": 0.8827,
+    "loss_fraction_pct": 11.7,
+    "delivered_to_silicon_fraction": 0.882661455
+  },
+  "rack_distribution": {
+    "rack_load_kW": 100.0,
+    "path_resistance_mOhm": 5.0,
+    "loss_12v_W": 347222.2,
+    "loss_48v_W": 21701.4,
+    "i2r_scaling": {
+      "voltage_ratio": 4.0,
+      "current_ratio": 0.25,
+      "loss_ratio": 0.0625,
+      "loss_reduction_pct": 93.75,
+      "loss_multiplier": 16.0
+    },
+    "loss_12v_as_pct_of_rack": 347.222,
+    "loss_48v_as_pct_of_rack": 21.701
+  },
+  "gan_switching": {
+    "frequency_MHz": 1.0,
+    "V_ds": 48.0,
+    "I_d": 20.0,
+    "P_sw_gan_W": 4.8,
+    "P_sw_si_W": 48.0,
+    "si_to_gan_ratio": 10.0,
+    "P_gate_gan_W": 0.04,
+    "half_bridge_gan_W": 9.6,
+    "note": "LLC/ZVS resonant stages reduce effective switching loss below hard-switched estimate"
+  },
+  "facility_savings_5MW": {
+    "facility_input_MW": 5.0,
+    "chip_power_institutional_MW": 3.623,
+    "chip_power_sovereign_MW": 4.413,
+    "extra_chip_power_at_same_draw_MW": 0.79,
+    "grid_draw_for_same_chip_MW": 4.105,
+    "grid_MW_saved_for_same_chip": 0.895,
+    "relative_improvement_pct": 21.8
+  },
+  "facility_savings_50MW": {
+    "facility_input_MW": 50.0,
+    "chip_power_institutional_MW": 36.235,
+    "chip_power_sovereign_MW": 44.135,
+    "extra_chip_power_at_same_draw_MW": 7.9,
+    "grid_draw_for_same_chip_MW": 41.05,
+    "grid_MW_saved_for_same_chip": 8.95,
+    "relative_improvement_pct": 21.8
+  },
+  "summit_2026": {
+    "event": "2026 Federal Funding Summit",
+    "date": "2026-07-16",
+    "time": "08:00-15:00",
+    "location": "Greene Block + Studios, 18 Main Street, Waterville, ME 04901",
+    "focus": "SBIR/STTR federal R&D funding",
+    "hosts": [
+      "Maine Technology Institute",
+      "Dirigo Labs",
+      "Central Maine Growth Council",
+      "Maine APEX Accelerator"
+    ],
+    "registration": "https://www.eventbrite.com/e/2026-federal-funding-summit-tickets-1988643999736",
+    "tap_support": "MTI Technical Assistance Program \u2014 pro bono proposal help",
+    "recommended_naics": [
+      "335999 \u2014 Miscellaneous Electrical Equipment Manufacturing",
+      "334419 \u2014 Electronic Component Manufacturing",
+      "541715 \u2014 R&D Physical/Engineering Sciences",
+      "541330 \u2014 Engineering Services"
+    ],
+    "agency_fit": [
+      "DoD \u2014 edge compute, directed energy support, vehicle/ship power density",
+      "DOE/ARPA-E \u2014 wide-bandgap power conversion, data center efficiency",
+      "NSF \u2014 novel power delivery architectures",
+      "DIU/AFWERX \u2014 rapid transition prototypes"
+    ],
+    "prerequisites_before_summit": [
+      "Form LLC/Corp + EIN if not done",
+      "SAM.gov registration (Unique Entity ID; CAGE assigned on approval)",
+      "1-page pitch: problem / solution / dual-use / team",
+      "Bring specific agency + topic questions for 1:1s"
+    ]
+  },
+  "cage_code_note": "CAGE codes are assigned to registered legal entities via SAM.gov \u2014 not individuals or AI systems. Register LLC/Corp \u2192 EIN \u2192 SAM.gov \u2192 CAGE (free, ~2\u20134 weeks).",
+  "sbir_pitch_bullets": [
+    "Problem: Institutional data centers lose 20\u201325% of input power before silicon (multi-stage AC/DC/AC).",
+    "Sovereign Grid-to-Chip DC topology delivers 88.3% to chip vs 72.5% institutional baseline.",
+    "At 5 MW 04901-class load: +0.79 MW compute at same grid draw, or save 0.90 MW for same output.",
+    "48V rack bus cuts distribution I\u00b2R losses 93.8% vs 12V (16\u00d7 lower loss).",
+    "GaN @ 1 MHz: 10\u00d7 lower switching loss than Si at same conditions.",
+    "Defense dual-use: tactical edge AI nodes, ship/vehicle power density, resilient DC microgrids.",
+    "Ask at summit: DoD SBIR power electronics topics + MTI TAP pairing for Phase I."
+  ]
+}
