@@ -1,0 +1,33 @@
+{
+  "high_risk_asns": {
+    "50673": "Serverel / Bulletproof Hosting Often Used by RIS",
+    "197695": "Stark Industries Solutions / Widely Documented RIS Proxy Platform",
+    "20473": "AS-CHOOPA / Vultr Choopa - Frequently Abused for Short-Lived Phishing",
+    "44477": "ST-BGP / Stark Infrastructure Clusters",
+    "200593": "MivoCloud SRL / Heavily Abused Moldovan Hosting Platform",
+    "48282": "Serverius Holding B.V. / Frequently Used for Threat Actor C2 Nodes"
+  },
+  "high_risk_org_keywords": [
+    "stark industries",
+    "mivocloud",
+    "serverel",
+    "bulletproof",
+    "petersburg internet network"
+  ],
+  "actor_tags": {
+    "UNC5792": {
+      "ttps": ["sgnl://linkdevice", "modified signal group invite", "QR redirect"],
+      "keywords": ["sgnl", "signal", "linkdevice"]
+    },
+    "UNC4221": {
+      "ttps": ["backup recovery key", "64-character key", "kropyva lure"],
+      "keywords": ["kropyva", "backup", "recovery", "verify"]
+    }
+  },
+  "threat_patterns": [
+    "signal.*(verify|backup|support|link|device)",
+    "whatsapp.*(secure|backup)",
+    "sgnl.*(link|device|verify)",
+    "kropyva.*(auth|verify|backup)"
+  ]
+}
